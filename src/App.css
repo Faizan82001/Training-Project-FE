@@ -1,0 +1,150 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Montserrat, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+  font-weight: 100;
+  color: #1d2129;
+  min-width: 900px;
+  overflow-x: auto;
+}
+
+.container {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 50%;
+  max-width: 70%;
+  min-height: 600px;
+  height: 75vh;
+  margin: 5% auto;
+  box-shadow: 1px 2px 8px 1px gray;
+}
+
+.responsive {
+  width: 40vw;
+  min-width: 400px;
+  max-width: 800px;
+}
+
+.form-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.5rem;
+  margin-top: -8vh !important;
+}
+
+.container > p{
+  font-size: 1.5rem;
+  margin-top: -8vh;
+}
+
+.ant-layout-content {
+  padding: 0.5rem;
+}
+
+.display-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* for modal component */
+
+.modalStyle .ant-modal-footer {
+  display: flex;
+  padding: 0;
+}
+
+.modalStyle .ant-btn {
+  display: block;
+  border-radius: 0 0 0px 8px;
+  width: 50%;
+  margin: 0;
+  height: 60px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.modalStyle .ant-modal-footer .ant-btn+.ant-btn:not(.ant-dropdown-trigger) {
+  margin: 0;
+  border-radius: 0 0 8px 0px;
+}
+
+.modalStyle .ant-modal-content {
+  padding-left: 0px;
+  padding-bottom: 0px;
+  padding-right: 0px;
+}
+
+.modalStyle .ant-modal-header {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.modalStyle .ant-modal-body {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+/* for list view */
+
+.ant-tabs-nav {
+  padding-left: 1rem;
+}
+
+.ant-tabs-tab-active>.ant-tabs-tab-btn {
+  color: #0a138c !important;
+}
+
+.ant-tabs-tab-btn {
+  color: #818589;
+}
+
+.ant-tabs-ink-bar {
+  background-color: #0a138c !important;
+  height: 2.2px !important;
+}
+
+.ant-radio-button-wrapper-checked {
+  background: #0a138c !important;
+  border-color: #0a138c !important;
+}
+
+.ant-radio-button-wrapper {
+  border-radius: 0px;
+}
+
+.ant-radio-button-wrapper:first-child,
+.ant-radio-button-wrapper:last-child {
+  border-radius: 0px;
+}
+
+.audit-trail {
+  background: white;
+  height: 100%;
+  max-height: 539px;
+  border-right: 1px solid #b9b6b6;
+  border-bottom: 1px solid #b9b6b6;
+  overflow: auto;
+}
+
+.audit-trail-no-data {
+  display: flex;
+  justify-content: center;
+  margin-top: 20vh;
+}
+
+.docViewer-container .ant-layout-content {
+  background: white;
+  border-right: 1px solid #b9b6b6;
+  border-bottom: 1px solid #b9b6b6;
+}
+
+.dropdown > ul{
+  border-radius: 0px !important;
+}
