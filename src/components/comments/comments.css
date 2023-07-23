@@ -1,0 +1,94 @@
+.comment-box{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background: #ffffff;
+}
+
+#chats {
+    overflow: auto;
+}
+
+#chats::-webkit-scrollbar {
+    width: 3px;
+}
+
+#chats::-webkit-scrollbar-track {
+    border-radius: 8px;
+    background-color: #e7e7e7;
+    border: 1px solid #cacaca;
+    box-shadow: inset 0 0 6px rgba(53, 53, 62, 0.3);
+}
+
+#chats::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background-color: #42506e;
+}
+
+.recieved-message{
+    display: flex;
+    margin: 1%;
+}
+
+.message-container {
+    height: 80%;
+    max-width: 70%;
+}
+
+.date{
+    display: flex;
+    color: gray;
+    font-size: 0.65rem;
+    margin: 0 0.5rem;
+}
+
+.card{
+    font-size: 0.9rem;
+    background: #e9ebf0;
+    color: #23386f;
+    border-radius: 1px 12px 12px 12px;
+    width: fit-content;
+}
+
+.my-message{
+    display: flex;
+    justify-content: flex-end;
+    margin: 1%;
+}
+
+.my-message .card{
+    background: #192f68;
+    color: #e9ebf0;
+    border-radius: 12px 1px 12px 12px;
+}
+
+.my-message .date{
+    justify-content: flex-end;
+}
+
+.comment{
+    overflow: hidden;
+    border-right: 1px solid #b9b6b6;
+    height: 100%;
+    max-height: 486px;
+}
+
+.my-message .message-body{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.message-body{
+    letter-spacing: 0.5px;
+}
+
+.input{
+    width: 98%;
+    margin: 1%;
+}
+
+.comment-box > .no-data{
+    text-align: center;
+    transform: translate(0vh, -30vh);
+}

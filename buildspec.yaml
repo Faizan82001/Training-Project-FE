@@ -1,0 +1,44 @@
+version: 0.2
+environment_variables:
+  plaintext:
+     S3_BUCKET: "s3-interns-project-artifacts"
+     APP_BUCKET: "app.dev.mddata.growexx.com"
+     DISTRIBUTION_ID: "E3EVPUDQTIW3WG"
+     projectKey: "medical-data-fe-intern"
+     projectVersion: "main"
+     projectName: "medical-data-fe-intern"
+env:
+  parameter-store:
+    SONAR_TOKEN: 'SONAR_TOKEN'
+    SONAR_HOST: 'SONAR_HOST'
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18.x
+  pre_build:
+    commands:
+      - echo Installing source NPM dependencies...
+      - aws s3 cp s3://$S3_BUCKET/mddata-usw1-react-pi/config-ui/.env .
+      - npm install
+  build:
+    commands:
+      - echo Build started on `date`
+      - npm run build
+      - npm run test
+      - echo Runnng sonar-scanner on `date`
+      - curl ifconfig.co
+      - wget -q https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.2.0.1227-linux.zip
+      - unzip sonar-scanner-cli-3.2.0.1227-linux.zip
+      - aws s3 cp s3://$S3_BUCKET/mddata-fe-artifacts/config/sonar-scanner.properties sonar-scanner-3.2.0.1227-linux/conf/sonar-scanner.properties
+      - ./sonar-scanner-3.2.0.1227-linux/bin/sonar-scanner -Dsonar.host.url=$SONAR_HOST -Dsonar.login=$SONAR_TOKEN -Dsonar.projectKey=$projectKey -Dsonar.projectVersion=$projectVersion
+  post_build:
+    commands:
+      - ls -ltr	
+      - aws s3 cp build s3://${APP_BUCKET} --recursive  --acl public-read
+      - aws cloudfront create-invalidation --distribution-id ${DISTRIBUTION_ID} --paths "/*"
+      - echo Build completed on `date`
+artifacts:
+  files:
+    - '**/*'
+  base-directory: build
+

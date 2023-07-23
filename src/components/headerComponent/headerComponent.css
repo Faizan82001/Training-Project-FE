@@ -1,0 +1,50 @@
+.menuWrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.actions {
+  display: flex;
+  flex-grow: 1;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 0.5rem;
+  margin-right: 1.5rem;
+}
+
+.header-dropdown {
+  width: auto;
+  box-shadow: 1px 1px 7px #7d7d7d;
+}
+
+.display-center-block {
+  display: block;
+}
+
+.avatar-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.userType {
+  cursor: default;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  color:#2d2d63;
+  font-size: 1rem;
+  height: 100%;
+}
+
+.userType:hover{
+  background: #ffffff;
+}
+
+.ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-item-disabled{
+  cursor: auto !important;
+}
+
+.ant-dropdown-menu-item-divider{
+  background: #b2b2b2 !important;
+}
